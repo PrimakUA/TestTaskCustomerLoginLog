@@ -1,0 +1,22 @@
+<?php
+/**
+ * @var $block \Primak\CustomerLog\Block\Adminhtml\CustomerLogData
+ */
+
+$ip = $block->returnIp($this->getRequest()->getParam('id'));
+if ($ip)
+{
+    ?>
+    <div class="fieldset-wrapper customer-information">
+        <table class="admin__table-secondary">
+            <tbody>
+            <tr>
+                <th><?= $block->escapeHtml(__('Last Logged IP is:')) ?></th>
+                <td><?= $block->escapeHtml($ip) ?></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <?php
+}
+?>
